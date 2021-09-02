@@ -9,15 +9,10 @@ const isValid = function(s){
   let stack = [];  
 
   for(let key of s){    
-    if(brackets[key]){
-      console.log(brackets[key]);
+    if(brackets[key]){      
       stack.push(brackets[key]);
-    }else{
-    	let lastItem = stack.pop();
-      console.log(lastItem);
-      if (lastItem !== key){
-         return false;
-      }
+    } else if (stack.pop() !== key){
+         return false;      
     }
   }
 
